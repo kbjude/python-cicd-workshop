@@ -11,9 +11,7 @@ jobs:
       - python/load-cache
       - python/install-deps
       - python/save-cache
-      - run:
-          name: Run Tests
-          command: ~/.local/bin/pytest
+    Run Tests command: ~/.local/bin/pytest deploy: docker: - image: circleci/python:3.7 
       - store_artifacts:
           path: test-reports
           destination: test-reports
