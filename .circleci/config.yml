@@ -11,10 +11,12 @@ jobs:
       - python/load-cache
       - python/install-deps
       - python/save-cache
-  - run:
-      name: Run Tests
-      command: ~/.local/bin/pytest
-
+      - run:
+          name: Run Tests
+          command: ~/.local/bin/pytest
+      - store_artifacts:
+          path: test-reports
+          destination: test-reports
 workflows:
   main:
     jobs:
