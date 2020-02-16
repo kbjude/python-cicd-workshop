@@ -11,15 +11,15 @@ jobs:
       - python/load-cache
       - python/install-deps
       - python/save-cache
-  - run:
-      name: run tests
-      command: |
-        . venv/bin/activate
-        python manage.py test
+      - run:
+          name: run tests
+          command: |
+            . venv/bin/activate
+            python manage.py test
 
-  - store_artifacts:
-      path: test-reports
-      destination: test-reports
+      - store_artifacts:
+          path: test-reports
+          destination: test-reports
 workflows:
   main:
     jobs:
